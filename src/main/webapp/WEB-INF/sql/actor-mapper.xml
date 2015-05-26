@@ -11,8 +11,6 @@
     SELECT * FROM ACTOR
   </select>
 
-  <delete id="delete" parameterType="int">
-    DELETE FROM ACTOR WHERE ACTOR_ID = #{value}
-  </delete>
+
 
 </mapper>
