@@ -28,11 +28,11 @@
 <div id="c0">여기에  id "c0"의 내용 입력</div>
 <div id="c1">
 	<input type="text"  name="search_key" value="" style="width:400px; height:20px;" />
-	<input type="button" value="검색"  alt="search" />
+	<a href ="search.jsp"><input type="button" value="검색"  alt="search" /></a>
 </div>
 <c:forEach var="actor" items="${actors}" varStatus="status">
 <div id="c2">
-	<table width="600" border="1">
+	<a href ="searchview.jsp"><table width="600" border="1">
 		<tr>
 			<td width="50" height="30"><div align="center">제목</div></td>
 			<td width="300" height="30">&nbsp;${film.title}</td>
@@ -51,7 +51,7 @@
 			<td width="50" height="30"><div align="center">등급</div></td>
 			<td width="200" height="30">&nbsp;{film.title}</td>
 		</tr>
-	</table>
+	</table></a>
 </div>
 </c:forEach>
 </body>

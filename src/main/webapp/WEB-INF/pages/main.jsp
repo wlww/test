@@ -22,7 +22,7 @@
 <div id="c0">여기에  id "c0"의 내용 입력</div>
 <div id="c1">
 	<input type="text"  name="search_key" value="" style="width:400px; height:20px;" />
-	<input type="button" value="검색"  alt="search" /></div>
+	<a href="search.jsp"><input type="button" value="검색"  alt="search" /></a></div>
 
 </body>
 </html>
