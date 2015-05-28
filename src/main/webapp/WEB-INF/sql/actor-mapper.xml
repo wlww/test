@@ -4,7 +4,7 @@
 <mapper namespace="ActorRepository">
 
   <select id="select" resultType="map">
-    SELECT * FROM ACTOR WHERE ACTOR_ID = #{value}
+    SELECT * FROM ACTOR WHERE first_name like CONCAT('%',#{VALUE },'%')
   </select>
 
   <select id="selectAll" resultType="map">
