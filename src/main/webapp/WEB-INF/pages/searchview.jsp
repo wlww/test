@@ -153,16 +153,16 @@
 <div id="c2">
   <div id="c3">
     <div id="c13">*영화제목(연도) :</div>
-    <div id="c14"></div>
+    <div id="c14">&nbsp;${film.title}</div>
   </div>
   <div id="c5">
     <div id="c27">*출연배우 :</div>
-    <div id="c28"></div></div>
+    <div id="c28">&nbsp;${film.title}</div></div>
   <div id="c4">
     <div id="c22">*장르 :</div>
     <div id="c23"></div>
     <div id="c24">*개봉일 :</div>
-    <div id="c25"></div>
+    <div id="c25">&nbsp;${film.release_year}</div>
   </div>
 
   <div id="a2">

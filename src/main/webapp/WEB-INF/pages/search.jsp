@@ -30,7 +30,7 @@
 	<input type="text"  name="search_key" value="" style="width:400px; height:20px;" />
 	<a href ="search.jsp"><input type="button" value="검색"  alt="search" /></a>
 </div>
-<c:forEach var="actor" items="${actors}" varStatus="status">
+<c:forEach var="films" items="${films}" varStatus="status">
 <div id="c2">
 	<a href ="searchview.jsp"><table width="600" border="1">
 		<tr>
@@ -41,15 +41,15 @@
 		</tr>
 		<tr>
 			<td width="50" height="30"><div align="center">배우</div></td>
-			<td width="300" height="30">&nbsp;{film.title}</td>
+			<td width="300" height="30">&nbsp;${film.title}</td>
 			<td width="50" height="30"><div align="center">장르</div></td>
-			<td width="200" height="30">&nbsp;{film.title}</td>
+			<td width="200" height="30">&nbsp;${film.title}</td>
 		</tr>
 		<tr>
 			<td width="50" height="30"><div align="center">감독</div></td>
-			<td width="300" height="30">&nbsp;{film.title}</td>
+			<td width="300" height="30">&nbsp;${film.title}</td>
 			<td width="50" height="30"><div align="center">등급</div></td>
-			<td width="200" height="30">&nbsp;{film.title}</td>
+			<td width="200" height="30">&nbsp;${film.title}</td>
 		</tr>
 	</table></a>
 </div>

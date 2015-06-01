@@ -12,11 +12,13 @@ public class SearchController {
 
 	@Autowired
 	ActorRepository actorRepository;
+	FilmRepository filmRepository;
 
 	@RequestMapping(method = RequestMethod.GET)
 	public ModelAndView world() {
 		ModelAndView mav = new ModelAndView("/search");
 		mav.addObject("actors", actorRepository.selectAll());
+		mav.addObject("films", filmRepository.selectAll());
 		return mav;
 	}
 
