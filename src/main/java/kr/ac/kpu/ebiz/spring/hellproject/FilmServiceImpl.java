@@ -19,4 +19,8 @@ public class FilmServiceImpl implements FilmService {
         return filmRepository.selectByCriteria(searchCriteria);
     }
 
+    public Map getFilm(String id) {
+        return filmRepository.select(Integer.parseInt(id));
+    }
+
 }

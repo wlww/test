@@ -4,7 +4,7 @@
 <mapper namespace="FilmRepository">
 
    <select id="select" resultType="map">
-    SELECT * FROM FILM WHERE title like CONCAT('%',#{VALUE },'%')
+    SELECT * FROM FILM WHERE film_id = ${value}
   </select>
 
    <select id="selectAll" resultType="map">

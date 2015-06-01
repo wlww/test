@@ -6,20 +6,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 /**
  * Created by User on 2015-05-27.
  */
 @Controller
-@RequestMapping("/search")
+@RequestMapping("/searchview")
 public class SearchviewController {
 
     @Autowired
-    ActorRepository actorRepository;
+    FilmService filmService;
 
     @RequestMapping(method = RequestMethod.GET)
-    public ModelAndView world() {
-        ModelAndView mav = new ModelAndView("/searchview");
-        mav.addObject("actors", actorRepository.selectAll());
+    protected ModelAndView handleRequestInternal(HttpServletRequest request,
+                                                 HttpServletResponse response) throws Exception {
+
+        String id = request.getParameter("id"); //사원번호
+
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("film", filmService.getFilm(id));
+        mav.setViewName("searchview");
         return mav;
     }
 }

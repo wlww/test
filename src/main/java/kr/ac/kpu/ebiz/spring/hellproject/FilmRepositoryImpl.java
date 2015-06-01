@@ -22,11 +22,11 @@ public class FilmRepositoryImpl extends SqlSessionDaoSupport implements FilmRepo
     }
 
     public List<Map> selectByCriteria(SearchCriteria searchCriteria) {
-        if (searchCriteria.getSearchTitle() != null) {
+        if (searchCriteria.getSearchTitle() != null && !"".equals(searchCriteria.getSearchTitle())) {
             return getSqlSession().selectList("FilmRepository.selectByTitle", searchCriteria.getSearchTitle());
         }
 
-        if (searchCriteria.getSearchActor() != null) {
+        if (searchCriteria.getSearchActor() != null && !"".equals(searchCriteria.getSearchActor())) {
             return getSqlSession().selectList("FilmRepository.selectByActor", searchCriteria.getSearchActor());
         }
 

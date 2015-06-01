@@ -10,4 +10,5 @@ public interface FilmService {
 
     List<Map> getAllFilms(SearchCriteria searchCriteria);
 
+    Map getFilm(String id);
 }
