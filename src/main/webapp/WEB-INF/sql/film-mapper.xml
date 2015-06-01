@@ -3,14 +3,27 @@
 
 <mapper namespace="FilmRepository">
 
-  <select id="select" resultType="map">
+   <select id="select" resultType="map">
     SELECT * FROM FILM WHERE title like CONCAT('%',#{VALUE },'%')
   </select>
 
-  <select id="selectAll" resultType="map">
+   <select id="selectAll" resultType="map">
     SELECT * FROM FILM
   </select>
 
+   <select id="selectByTitle" resultType="map">
+        select * from film
+        where title like '%${value}%'
+  </select>
+
+   <select id="selectByActor" resultType="map">
+        select * from film
+        where film_id in
+        (
+            select fa.film_id  from film_actor fa, actor a
+            where a.last_name like '%${value}%' and a.actor_id = fa.actor_id
+        )
+  </select>
 
 
 </mapper>

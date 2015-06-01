@@ -10,4 +10,6 @@ public interface FilmRepository {
 	List<Map> selectAll();
 
 	boolean delete(int filmId);
+
+	List<Map> selectByCriteria(SearchCriteria searchCriteria);
 }

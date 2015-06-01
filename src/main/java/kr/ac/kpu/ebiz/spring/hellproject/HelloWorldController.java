@@ -17,6 +17,7 @@ public class HelloWorldController {
 	public ModelAndView world() {
 		ModelAndView mav = new ModelAndView("/hello");
 		mav.addObject("actors", actorRepository.selectAll());
+		mav.addObject("actors", actorRepository.selectAll());
 		return mav;
 	}
 
