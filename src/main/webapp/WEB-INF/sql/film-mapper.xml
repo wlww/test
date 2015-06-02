@@ -12,8 +12,17 @@
   </select>
 
    <select id="selectByTitle" resultType="map">
-        select * from film
-        where title like '%${value}%'
+        select f.title, f.description, f.release_year, f.rating ,c.name, a.first_name
+From film f, category c, actor a
+Where f.title like '%${value}%'
+and c.category_id in
+(select c.category_id
+from category c ,film_category fc
+Where c.category_id = fc.category_id)
+and a.actor_id in
+(select a.actor_id
+from actor a ,film_actor ac
+Where a.actor_id = ac.actor_id)
   </select>
 
    <select id="selectByActor" resultType="map">

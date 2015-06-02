@@ -38,7 +38,7 @@
 <div id="c1">
     <form action="/main" method="get">
         영화제목: <input type="text" name="searchTitle" value="" style="width:400px; height:20px;"/><br/>
-        배우: <input type="text" name="searchActor" value="" style="width:400px; height:20px;"/>
+        배&nbsp;&nbsp;&nbsp;&nbsp;우: <input type="text" name="searchActor" value="" style="width:400px; height:20px;"/>
         <input type="submit" value="검색" alt="search"/>
     </form>
 </div>
@@ -55,11 +55,11 @@
                 </tr>
                 <tr>
                     <td><div align="center">출연</div></td>
-                    <td colspan="3">&nbsp;</td>
+                    <td colspan="3">&nbsp;${actor.first_name}</td>
                 </tr>
                 <tr>
                     <td><div align="center">장르</div></td>
-                    <td>&nbsp;</td>
+                    <td>&nbsp;${category.name}</td>
                     <td><div align="center">등급</div></td>
                     <td>&nbsp;${film.rating}</td>
                 </tr>
