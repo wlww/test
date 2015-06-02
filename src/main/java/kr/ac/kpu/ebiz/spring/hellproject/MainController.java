@@ -26,8 +26,8 @@ public class MainController {
                                                  HttpServletResponse response) throws Exception {
 
         //request 객체의 파라미터값을 꺼내서
-        String searchTitle = request.getParameter("searchTitle"); //사원번호
-        String searchActor = request.getParameter("searchActor"); //부서번호
+        String searchTitle = request.getParameter("searchTitle");
+        String searchActor = request.getParameter("searchActor");
 
         //객체에 저장한다.
         SearchCriteria searchCriteria = new SearchCriteria();
