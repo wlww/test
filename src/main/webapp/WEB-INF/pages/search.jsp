@@ -55,11 +55,11 @@
                 </tr>
                 <tr>
                     <td><div align="center">출연</div></td>
-                    <td colspan="3">&nbsp;<c:forEach var="actor" items="${actor}" varStatus="status">${actor.first_name}</c:forEach>></td>
+                    <td colspan="3">&nbsp;</td>
                 </tr>
                 <tr>
                     <td><div align="center">장르</div></td>
-                    <td>&nbsp;${category.name}</td>
+                    <td>&nbsp;</td>
                     <td><div align="center">등급</div></td>
                     <td>&nbsp;${film.rating}</td>
                 </tr>
