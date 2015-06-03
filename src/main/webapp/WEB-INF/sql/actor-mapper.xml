@@ -4,7 +4,14 @@
 <mapper namespace="ActorRepository">
 
   <select id="select" resultType="map">
-    SELECT * FROM ACTOR WHERE first_name like CONCAT('%',#{VALUE },'%')
+        select c.first_name, c. last_name
+        from film f, actor c
+        where f.film_id in
+        in
+        (
+            select fa.film_id  from film_actor fa, actor a
+            where a.last_name like '%${value}%' and a.actor_id = fa.actor_id
+        )
   </select>
 
   <select id="selectAll" resultType="map">

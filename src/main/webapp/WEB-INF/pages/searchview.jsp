@@ -47,7 +47,7 @@
       <td width="95"><div align="center">장르</div></td>
       <td width="124">ㅇㅇㅇ</td>
       <td width="95"><div align="center">등급</div></td>
-      <td colspan="2">${film.title}</td>
+      <td colspan="2">${film.rating}</td>
     </tr>
     <tr>
       <td height="50" colspan="2"><div align="center">출연</div></td>
@@ -59,7 +59,7 @@
     </tr>
     <tr>
       <td width="56" height="186" align="left" valign="top"></td>
-      <td height="186" colspan="6" align="left" valign="top"><br />${film.title}</td>
+      <td height="186" colspan="6" align="left" valign="top"><br />${film.description}</td>
       <td width="14" align="left" valign="top">&nbsp;</td>
     </tr>
   </table>

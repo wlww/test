@@ -55,7 +55,7 @@
                 </tr>
                 <tr>
                     <td><div align="center">출연</div></td>
-                    <td colspan="3">&nbsp;${actor.first_name}</td>
+                    <td colspan="3">&nbsp;<c:forEach var="actor" items="${actor}" varStatus="status">${actor.first_name}</c:forEach>></td>
                 </tr>
                 <tr>
                     <td><div align="center">장르</div></td>
