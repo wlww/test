@@ -23,7 +23,7 @@ public class SearchviewController {
     protected ModelAndView handleRequestInternal(HttpServletRequest request,
                                                  HttpServletResponse response) throws Exception {
 
-        String id = request.getParameter("id"); //사원번호
+        String id = request.getParameter("id");
 
         ModelAndView mav = new ModelAndView();
         mav.addObject("film", filmService.getFilm(id));

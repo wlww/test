@@ -38,14 +38,14 @@
 <div id="c1">
     <form action="/main" method="get">
         영화제목: <input type="text" name="searchTitle" value="" style="width:400px; height:20px;"/><br/>
-        배&nbsp;&nbsp;&nbsp;&nbsp;우: <input type="text" name="searchActor" value="" style="width:400px; height:20px;"/>
+        배&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;우: <input type="text" name="searchActor" value="" style="width:400px; height:20px;"/>
         <input type="submit" value="검색" alt="search"/>
     </form>
 </div>
 <p/>
 <c:forEach var="film" items="${filmlist}" varStatus="status">
     <div id="s1">
-        <a href="/searchview?id=${film.film_id}">
+        <a href="/searchview?id=${film.film_id}&${actor.actor_id}&${category.category_id}">
             <table width="706" height="95" frame="box" border="2" rules="none">
                 <tr>
                     <td width="60"><div align="center">제목</div></td>
@@ -55,11 +55,11 @@
                 </tr>
                 <tr>
                     <td><div align="center">출연</div></td>
-                    <td colspan="3">&nbsp;</td>
+                    <td colspan="3">&nbsp;${film.aactor}</td>
                 </tr>
                 <tr>
                     <td><div align="center">장르</div></td>
-                    <td>&nbsp;</td>
+                    <td>&nbsp;${film.genre}</td>
                     <td><div align="center">등급</div></td>
                     <td>&nbsp;${film.rating}</td>
                 </tr>

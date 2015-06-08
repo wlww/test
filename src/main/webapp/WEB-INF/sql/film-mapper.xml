@@ -3,28 +3,50 @@
 
 <mapper namespace="FilmRepository">
 
-   <select id="select" resultType="map">
-    SELECT * FROM FILM WHERE film_id = ${value}
+    <select id="select" resultType="map">
+    SELECT f.film_id, f.title, f.description, f.release_year, f.rating ,c.category_id,c.name as genre, a.actor_id, concat(a.first_name,' ',a.last_name) as aactor
+    FROM FILM f,actor a, category c
+    WHERE f.film_id = ${value}
+    and a.actor_id IN
+    (select actor_id from actor Where actor_id = ${value})
+    and c.category_id in
+    (select category_id
+    from category
+    Where category_id = ${value})
   </select>
 
-   <select id="selectAll" resultType="map">
+    <select id="selectAll" resultType="map">
     SELECT * FROM FILM
   </select>
 
-   <select id="selectByTitle" resultType="map">
-        select *
-        From film
-        Where title like '%${value}%'
+    <select id="selectByTitle" resultType="map">
+       select f.film_id, f.title, f.description, f.release_year, f.rating ,c.category_id,c.name as genre, a.actor_id, concat(a.first_name,' ',a.last_name) as aactor
+       From film f, category c, actor a
+       Where f.title   like '%${value}%'
+       and c.category_id in
+       (select c.category_id
+       from category c ,film_category fc
+       Where c.category_id = fc.category_id)
+       and a.actor_id in
+       (select a.actor_id
+       from actor a ,film_actor ac
+       Where a.actor_id = ac.actor_id)  limit 300
 
   </select>
 
-   <select id="selectByActor" resultType="map">
-        select * from film
-        where film_id in
-        (
-            select fa.film_id  from film_actor fa, actor a
-            where a.last_name like '%${value}%' and a.actor_id = fa.actor_id
-        )
+    <select id="selectByActor" resultType="map">
+   select f.film_id, f.title, f.description, f.release_year, f.rating ,c.category_id,c.name as genre, a.actor_id, concat(a.first_name,' ',a.last_name) as aactor
+       From film f, category c, actor a
+       Where a.first_name  like '%${value}%'
+       and c.category_id in
+       (select c.category_id
+       from category c ,film_category fc
+       Where c.category_id = fc.category_id)
+       and f.film_id in
+       (select f.film_id
+       from actor a ,film_actor ac, film f
+       Where a.actor_id = ac.actor_id)  limit 300
+
   </select>
 
 

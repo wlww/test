@@ -43,15 +43,15 @@
     </tr>
     <tr>
       <td height="50" colspan="2"><div align="center">개봉일</div></td>
-      <td width="259">ㅇㅇㅇ</td>
+      <td width="259">${film.release_year}</td>
       <td width="95"><div align="center">장르</div></td>
-      <td width="124">ㅇㅇㅇ</td>
+      <td width="124">${film.genre}</td>
       <td width="95"><div align="center">등급</div></td>
       <td colspan="2">${film.rating}</td>
     </tr>
     <tr>
       <td height="50" colspan="2"><div align="center">출연</div></td>
-      <td colspan="6">ㅇㅇㅇ</td>
+      <td colspan="6">${film.aactor}</td>
     </tr>
     <tr>
       <td height="50" colspan="2"><div align="center">주요정보</div></td>
